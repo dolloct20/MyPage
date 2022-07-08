@@ -17,3 +17,16 @@ export interface Patient {
   chr_no: string;
   sex: number;
 }
+
+export interface Colunms {
+  name: string;
+  required?: boolean;
+  label: string;
+  align?: string;
+  sortable?: boolean;
+  field: string | ((row: any) => any);
+  sort?: ((a: any, b: any, rowA: any, rowB: any) => number);
+  format?: ((val: string | number) => any);
+  style?: string;
+  headerStyle?: string; 
+}

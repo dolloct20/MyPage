@@ -46,13 +46,16 @@
 
 <script lang="ts">
 import { Patient } from 'components/models'
-import { defineComponent, ref } from 'vue'
+import { defineComponent, reactive } from 'vue'
 
 export default defineComponent({
   name: 'IndexPage',
   components: {},
+  props: {
+    profileIsOpen: Boolean
+  },
   setup () {
-    const patientInfo = ref<Patient[]>([
+    const patientInfo: Patient[] = reactive([
       {
         id: 'A142345',
         name: 'Nick Wang',
@@ -67,5 +70,10 @@ export default defineComponent({
     return { patientInfo }
   }
 })
-
 </script>
+<style>
+.my-card {
+  width: 100%;
+  max-width: 1400px;
+}
+</style>
